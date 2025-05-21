@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Connection1'  # <-- EXACT naam daalo jo aapne diya
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      curl -sLo terraform.zip https://releases.hashicorp.com/terraform/1.6.6/terraform_1.6.6_linux_amd64.zip
+      unzip terraform.zip
+      sudo mv terraform /usr/local/bin/
+
+      terraform init
+      terraform plan
+      terraform apply -auto-approve
+
