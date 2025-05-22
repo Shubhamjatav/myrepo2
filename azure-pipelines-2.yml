@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# azure-pipelines.yml
+trigger:
+  - main  # या आपकी branch का नाम
+
+pool:
+  name: SelfHostedPool  # यहाँ अपने agent pool का नाम दें
+
+steps:
+  - script: |
+      Write-Output "✅ Pipeline started"
+      Write-Output "🚀 Running on Windows agent"
+      Write-Output "👋 Hello from PowerShell!"
+    displayName: 'Run PowerShell commands'
+    shell: powershell
+
+  - script: echo Hello from CMD!
+    displayName: 'Run CMD command'
+    shell: cmd
+
+
