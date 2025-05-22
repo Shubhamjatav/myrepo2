@@ -15,7 +15,7 @@ steps:
       Write-Output "✅ Pipeline started"
       Write-Output "🚀 Running on Windows agent"
       Write-Output "👋 Hello from CMD"
-    displayName: 'Run CMD commands'
+    displayName: 'Run CMD command'
 
   - script: echo Hello from CMD!
     displayName: 'Run CMD command'
