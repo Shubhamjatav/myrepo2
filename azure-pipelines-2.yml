@@ -8,18 +8,16 @@ trigger:
   - main  # या आपकी branch का नाम
 
 pool:
-  name: SelfHostedPool  # यहाँ अपने agent pool का नाम दें
+  name: default  # यहाँ अपने agent pool का नाम दें
 
 steps:
   - script: |
       Write-Output "✅ Pipeline started"
       Write-Output "🚀 Running on Windows agent"
       Write-Output "👋 Hello from PowerShell!"
-    displayName: 'Run PowerShell commands'
-    shell: powershell
+    displayName: 'Run cmd commands'
 
   - script: echo Hello from CMD!
     displayName: 'Run CMD command'
-    shell: cmd
 
 
